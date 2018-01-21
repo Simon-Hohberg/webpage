@@ -12,7 +12,7 @@ export class PostThumbComponent implements OnInit {
   @Input() id: string;
   @ViewChild('summary') summary: ElementRef;
 
-  private post: Post;
+  post: Post;
 
   constructor(private postLoader: PostLoaderService) {
     this.post = new Post();

@@ -17,7 +17,7 @@ export class PostComponent implements OnInit {
 
   @ViewChild('mainContent') postInner: ElementRef;
   @ViewChild('summary') summary: ElementRef;
-  private post: Post;
+  post: Post;
 
   constructor(private postLoader: PostLoaderService, private route: ActivatedRoute, private router: Router) {
     this.post = new Post();
