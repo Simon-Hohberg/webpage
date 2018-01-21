@@ -1,0 +1,7 @@
+<meta *ngIf="post.url !== ''" http-equiv="refresh" content="0; url={{ post.url }}" />
+<article>
+    <h1>{{ post.title }}</h1>
+    <p class="summary" #summary></p>
+    <div #mainContent>
+    </div>
+</article>

@@ -1,0 +1,35 @@
+<header id="toolbar">
+  <div id="owner">
+    <span>Simon Hohberg</span>
+    <span>Developer</span>
+  </div>
+  <span class="filler"></span>
+  <a href="#all" (click)="showAll()" [class.selected]="selected === 'all'">All</a>
+  <a href="#blog" (click)="showBlog()" [class.selected]="selected === 'blog'">Blog</a>
+  <a href="#projects" (click)="showProjects()" [class.selected]="selected === 'projects'">Projects</a>
+  <a href="#publications" (click)="showPublications()" [class.selected]="selected === 'publications'">Publications</a>
+  <!-- <a href="#" class="icon-button">
+    <fa name="search"></fa>
+  </a> -->
+  <a href="https://github.com/Simon-Hohberg" class="icon-button">
+    <fa name="github"></fa>
+  </a>
+  <a href="https://www.linkedin.com/in/simon-hohberg-42b1b2156" class="icon-button">
+    <fa name="linkedin"></fa>
+  </a>
+</header>
+
+<div id="top-background" *ngIf="onStartpage">
+  <h1 id="title">Excited about Web & Machine Learning</h1>
+</div>
+
+<div id="main-container" [class.header-margin]="!onStartpage || showsPost">
+  <nav id="posts-container">
+    <a *ngFor="let p of posts" (click)="showPost()" routerLink="{{ p }}" routerLinkActive="active" class="post">
+      <app-post-thumb [id]="p"></app-post-thumb>
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+
