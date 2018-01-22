@@ -75,6 +75,7 @@
 #owner {
     display: flex;
     flex-direction: column;
+    text-shadow: 1px 1px hsla(201, 37%, 27%, 1);
 }
 
 #owner span:nth-of-type(1) {
