@@ -9,6 +9,7 @@ html, body {
 }
 
 app-root {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
