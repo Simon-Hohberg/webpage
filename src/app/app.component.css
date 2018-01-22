@@ -10,18 +10,18 @@
 }
 
 #top-background {
-    background-image: url('/assets/imgs/main-background.jpeg');
-    background-size: 100% 400px;
-    background-repeat: no-repeat;
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 400px;
     overflow: hidden;
-    box-sizing: border-box;
-    padding: 20px;
     text-align: center;
     justify-content: center;
+}
+
+#top-background img {
+    width: 100%;
+    height: auto;
 }
 
 .filler {
@@ -30,7 +30,7 @@
 
 #toolbar {
     background-image: url('/assets/imgs/main-background.jpeg');
-    background-size: 100% 400px;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     position: fixed;
     top: 0;
@@ -88,6 +88,11 @@
 }
 
 #title {
+    position: absolute;
+    top: calc(50% - 20px);
+    width: 100%;
+    text-align: center;
+    margin: 0;
     font-size: 40px;
     font-weight: bolder;
     color: white;
