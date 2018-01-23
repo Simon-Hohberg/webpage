@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import * as showdown from "../../../lib/showdown";
-import * as Maxout from "../../../lib/maxout";
+import * as showdown from "../../lib/showdown";
+import * as Maxout from "../../lib/maxout";
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { PostLoaderService } from '../../post-loader.service';
+import { PostLoaderService } from '../post-loader.service';
 declare var MathJax: any;
-import { Post } from '../../post';
+import { Post } from '../post';
 import { Router } from '@angular/router';
 
 @Component({

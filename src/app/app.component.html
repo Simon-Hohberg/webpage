@@ -7,10 +7,12 @@
       <span>Developer</span>
     </div>
     <span class="filler"></span>
-    <a href="#all" (click)="showAll()" [class.selected]="selected === 'all'">All</a>
-    <a href="#blog" (click)="showBlog()" [class.selected]="selected === 'blog'">Blog</a>
-    <a href="#projects" (click)="showProjects()" [class.selected]="selected === 'projects'">Projects</a>
-    <a href="#publications" (click)="showPublications()" [class.selected]="selected === 'publications'">Publications</a>
+    <nav>
+      <a routerLink="/"             routerLinkActive="active" [class.selected]="selected === 'all'">All</a>
+      <a routerLink="blog/"         routerLinkActive="active" [class.selected]="selected === 'blog'">Blog</a>
+      <a routerLink="project/"     routerLinkActive="active" [class.selected]="selected === 'projects'">Projects</a>
+      <a routerLink="publication/" routerLinkActive="active" [class.selected]="selected === 'publications'">Publications</a>
+    </nav>
     <!-- <a href="#" class="icon-button">
       <fa name="search"></fa>
     </a> -->
@@ -29,11 +31,6 @@
 </div>
 
 <div id="main-container" [class.header-margin]="!onStartpage || showsPost">
-  <nav id="posts-container">
-    <a *ngFor="let p of posts" (click)="showPost()" routerLink="{{ p }}" routerLinkActive="active" class="post">
-      <app-post-thumb [id]="p"></app-post-thumb>
-    </a>
-  </nav>
   <router-outlet></router-outlet>
 </div>
 

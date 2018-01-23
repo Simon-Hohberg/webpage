@@ -5,21 +5,28 @@ import  {HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
-import { PostComponent } from './blog/post/post.component';
+import { PostComponent } from './post/post.component';
 import { PostThumbComponent } from './post-thumb/post-thumb.component';
 import { PostLoaderService } from './post-loader.service';
+import { ConfigService } from './config.service';
+import { PostListComponent } from './post-list/post-list.component';
 
 const appRoutes: Routes = [
-  { path: 'blog/:id',        component: PostComponent },
-  { path: 'projects/:id',     component: PostComponent },
-  { path: 'publications/:id', component: PostComponent }
+  { path: '',                 component: PostListComponent },
+  { path: 'blog',             component: PostListComponent },
+  { path: 'project',         component: PostListComponent },
+  { path: 'publication',     component: PostListComponent },
+  { path: 'blog/:id',         component: PostComponent },
+  { path: 'project/:id',     component: PostComponent },
+  { path: 'publication/:id', component: PostComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    PostThumbComponent
+    PostThumbComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     AngularFontAwesomeModule
   ],
-  providers: [PostLoaderService],
+  providers: [PostLoaderService, ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

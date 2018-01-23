@@ -1,0 +1,6 @@
+<nav id="posts-container">
+  <a *ngFor="let p of posts" [routerLink]="getPath(p)" routerLinkActive="active" class="post">
+    <app-post-thumb [id]="getType(p) + '/' + p"></app-post-thumb>
+  </a>
+</nav>
+<router-outlet></router-outlet>
